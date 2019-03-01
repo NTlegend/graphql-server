@@ -1,0 +1,15 @@
+type Query {
+    allUsers: [User]
+    fetchUser(id: Int!): User
+}
+
+type Mutation {
+    #
+}
+
+type User {
+    id: Int!
+    username: String!
+    email: String!
+    posts: [Post]
+}

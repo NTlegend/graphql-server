@@ -1,0 +1,15 @@
+type Query {
+    allPosts: [Post]
+    fetchPost(id: Int!): Post
+}
+
+type Mutation {
+    #
+}
+
+type Post {
+    id: Int!
+    message: String!
+    user: User!
+    created_at: Int!
+}

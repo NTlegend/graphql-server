@@ -6,6 +6,10 @@ class Post extends Model {
         return null;
     }
 
+    user() {
+        return this.belongsTo('App/Models/User');
+    }
+
     likes() {
         return this.hasMany('App/Models/PostLike');
     }
