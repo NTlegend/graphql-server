@@ -3,10 +3,6 @@ type Query {
     fetchUser(id: Int!): User
 }
 
-type Mutation {
-    #
-}
-
 type User {
     id: Int!
     username: String!

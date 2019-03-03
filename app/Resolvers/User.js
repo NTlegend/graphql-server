@@ -14,8 +14,6 @@ module.exports = {
         }
     },
 
-    Mutation: {},
-
     User: {
         // Fetch all posts created by a user
         async posts(userInJson) {

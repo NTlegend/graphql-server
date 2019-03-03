@@ -3,13 +3,9 @@ type Query {
     fetchPost(id: Int!): Post
 }
 
-type Mutation {
-    #
-}
-
 type Post {
     id: Int!
     message: String!
-    user: User!
+    author: User!
     created_at: Int!
 }

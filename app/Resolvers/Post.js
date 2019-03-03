@@ -14,11 +14,9 @@ module.exports = {
         }
     },
 
-    Mutation: {},
-
     Post: {
         // Fetch the author of a particular post
-        async user(postInJson) {
+        async author(postInJson) {
             // Convert JSON to model instance
             const post = new Post();
             post.newUp(postInJson);
