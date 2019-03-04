@@ -6,6 +6,10 @@ class Post extends Model {
         return null;
     }
 
+    static castDates(field, value) {
+        return value.valueOf();
+    }
+
     user() {
         return this.belongsTo('App/Models/User');
     }

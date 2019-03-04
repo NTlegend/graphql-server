@@ -7,5 +7,5 @@ type Post {
     id: Int!
     message: String!
     author: User!
-    created_at: Int!
+    created_at: String!
 }
