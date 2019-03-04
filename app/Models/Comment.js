@@ -6,6 +6,10 @@ class Comment extends Model {
         return null;
     }
 
+    static castDates(field, value) {
+        return value.valueOf();
+    }
+
     user() {
         return this.belongsTo('App/Models/User');
     }
@@ -14,8 +18,14 @@ class Comment extends Model {
         return this.hasMany('App/Models/CommentLike');
     }
 
+    groupedLikes() {
+        return this.likes()
+            .select('type')
+            .groupBy('type');
+    }
+
     comments() {
-        return this.hasMany('App/Models/Comment');
+        return this.hasMany('App/Models/Comment', 'id', 'parent');
     }
 }
 

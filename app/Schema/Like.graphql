@@ -1,0 +1,4 @@
+type Like {
+    type: String!
+    count: Int!
+}

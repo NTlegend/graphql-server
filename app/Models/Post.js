@@ -18,6 +18,12 @@ class Post extends Model {
         return this.hasMany('App/Models/PostLike');
     }
 
+    groupedLikes() {
+        return this.likes()
+            .select('type')
+            .groupBy('type');
+    }
+
     comments() {
         return this.hasMany('App/Models/Comment');
     }

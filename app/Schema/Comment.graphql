@@ -1,13 +1,8 @@
-type Query {
-    allPosts: [Post]
-    fetchPost(id: Int!): Post
-}
-
-type Post {
+type Comment {
     id: Int!
     message: String!
-    author: User!
     created_at: String!
+    author: User!
     likes: [Like]
     comments: [Comment]
 }

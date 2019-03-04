@@ -23,6 +23,22 @@ module.exports = {
 
             const user = await post.user().fetch();
             return user.toJSON();
+        },
+
+        async likes(postInJson) {
+            // Convert JSON to model instance
+            const post = new Post();
+            post.newUp(postInJson);
+
+            return post.groupedLikes().count();
+        },
+
+        async comments(postInJson) {
+            const post = new Post();
+            post.newUp(postInJson);
+
+            const comments = await post.comments().fetch();
+            return comments.toJSON();
         }
     }
 };
