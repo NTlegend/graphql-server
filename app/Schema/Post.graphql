@@ -3,6 +3,10 @@ type Query {
     fetchPost(id: Int!): Post
 }
 
+type Mutation {
+    addPost (message: String!): Post
+}
+
 type Post {
     id: Int!
     message: String!

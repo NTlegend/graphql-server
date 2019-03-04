@@ -3,6 +3,10 @@ type Query {
     fetchUser(id: Int!): User
 }
 
+type Mutation {
+    login (email: String!, password: String!): String
+}
+
 type User {
     id: Int!
     username: String!

@@ -14,6 +14,25 @@ module.exports = {
         }
     },
 
+    Mutation: {
+        // Add a new post
+        async addPost(_, { message }, { auth }) {
+            try {
+                // Check if user is logged in
+                await auth.check();
+
+                // Get the authenticated user
+                const user = await auth.getUser();
+
+                // Add new post for current user
+                return user.posts().create({ message });
+            } catch (error) {
+                // Throw error if user is not authenticated
+                throw new Error('Missing or invalid jwt token');
+            }
+        }
+    },
+
     Post: {
         // Fetch the author of a particular post
         async author(postInJson) {

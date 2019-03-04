@@ -14,6 +14,14 @@ module.exports = {
         }
     },
 
+    Mutation: {
+        // Handles user login
+        async login(_, { email, password }, { auth }) {
+            const { token } = await auth.attempt(email, password);
+            return token;
+        }
+    },
+
     User: {
         // Fetch all posts created by a user
         async posts(userInJson) {
